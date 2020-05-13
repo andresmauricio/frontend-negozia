@@ -1,0 +1,68 @@
+<div class="container">
+<div class="card my-5">
+    <div class="card-body p-5">
+        <h2 class="text-center">Información del usuario</h2>
+        <form [formGroup]="form" (ngSubmit)="sendData()">
+
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input 
+                [ngClass]="{'is-invalid': isInvalid('firstName'), 'is-valid': isValid('firstName')}"
+                formControlName="firstName" type="text" class="form-control" name="name" placeholder="Andrés Mauricio" >
+            </div>
+        
+            <div class="form-group">
+                <label for="lastName">Apellido</label>
+                <input 
+                [ngClass]="{'is-invalid': isInvalid('lastName'), 'is-valid': isValid('lastName')}"
+                formControlName="lastName" type="text" class="form-control" name="lastName" placeholder="Acelas Arevalo" >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo</label>
+                <input 
+                [ngClass]="{'is-invalid': isInvalid('email'), 'is-valid': isValid('email')}"
+                formControlName="email" type="email" class="form-control" name="email" placeholder="example@example.com" >
+            </div>
+
+            <div class="form-group">
+                <label  for="type">Tipo de teléfono</label>
+                <select 
+                [ngClass]="{'is-invalid': isInvalid('phoneType'), 'is-valid': isValid('phoneType')}"
+                formControlName="phoneType" class="form-control" name="type">
+                    <option [value]="'Fijo'">Fijo</option>
+                    <option [value]="'Celular'">Celular</option>
+                    <option [value]="'Trabajo'">Trabajo</option>
+                    <option [value]="'Otro'">Otro</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input 
+                [ngClass]="{'is-invalid': isInvalid('phone'), 'is-valid': isValid('phone')}"
+                formControlName="phone" type="text" class="form-control" name="phone" placeholder="3100000000" >
+            </div>
+
+            <div class="form-group">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input 
+                    [ngClass]="{'is-invalid': isInvalid('gender')}"
+                    [value]="'Masculino'" formControlName="gender" type="radio" id="customRadioInline1" name="gender" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline1">Masculino</label>
+                </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input 
+                    [ngClass]="{'is-invalid': isInvalid('gender')}"
+                    [value]="'Femenino'" formControlName="gender" type="radio" id="customRadioInline2" name="gender" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">Femenino</label>
+                  </div>
+ 
+            </div>
+        
+            <button class="btn btn-success btn-block">Enviar</button>
+        </form>
+    </div>
+</div>
+    
+</div>
